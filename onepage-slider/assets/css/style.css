@@ -110,4 +110,8 @@ html::-webkit-scrollbar-thumb{
   .container{
     grid-template-columns: 1fr;
   }
+  .column-left h1 {
+      margin-bottom: .5rem;
+      font-size: 2.4rem;
+  }
 }
