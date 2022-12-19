@@ -37,7 +37,10 @@
             </div>
             <img id="time" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/time.png">
         </div>
-
+            <div class="banner">
+                <h2>YOUR DREAM<br> <span>VACATION</span></h2>
+                <button class="cta">Book Now</button>
+            </div>
 </div>
     </section>
 
@@ -65,6 +68,21 @@
         .from("#title", {opacity:0, scale:0, ease:"back"})
         .from("#freds img", {y:160, stagger:0.1, duration:0.8, ease:"back"})
         .from("#time", {xPercent:100, duration:0.2})
+        const cta = document.querySelector(".cta")
+
+        //create a repeating scale tween
+        const scaleTween = gsap.to(cta, {scale:1, repeat:-1, yoyo:true, paused:true});
+
+
+        cta.addEventListener("mouseenter", ()=> scaleTween.restart())
+
+        cta.addEventListener("mouseleave", ()=> {
+            scaleTween.pause()
+            //create a new tween to return to normal size smoothly
+            gsap.to(cta, {scale:0.8})
+            
+})
+
     </script>
 </body>
 </html>
