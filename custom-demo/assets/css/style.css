@@ -19,7 +19,7 @@
 :root {
     --bg-color: #ffffff;
     --main-text-color: #0505af;
-    --fade-text-color: #afacd4;
+    --fade-text-color: #1a1a1a;
     --main-ripple-color: #bd8904;
     --saturate: 1.5;
     --base-font-size: 1.25vw;
@@ -234,12 +234,205 @@ ul,li{
 .gsap__item {
 	height: 100%;
 }
-.section-portfolio h3 {
+.section-portfolio h3,.section-services h3 {
     font-family: var(--display-font);
     line-height: .85;
     font-weight: normal;
     font-size: 2.25em;
     text-transform: uppercase;
-    color: var(--main-text-color);
+    color: var(--fade-text-color);
     margin-bottom: 30px;
+}
+
+.portfolio-text{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.menu {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  border-bottom: 1px solid var(--main-ripple-color);
+  cursor: pointer;
+}
+
+.menu__item-image_wrapper {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.menu__item-image_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.menu__item-image_inner .menu__item-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu__item-text {
+  position: relative;
+  display: block;
+  font-family: var(--display-font);
+  font-size: 4rem;
+  font-weight: 300;
+  padding: 2vh 0;
+  opacity: 1;
+  transition: opacity 350ms ease;
+  mix-blend-mode: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  color: black;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: var(--main-text-color);
+}
+.menu__item-text:hover .menu__item-innertext {
+  letter-spacing: 0.425rem;
+   -webkit-text-stroke-color: var(--main-text-color);
+
+}
+
+.menu__item-innertext {
+  display: inline-block;
+  transition: letter-spacing 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menu:hover .menu__item-text {
+  opacity: 0.25;
+}
+.menu:hover .menu__item-text:hover {
+  opacity:1;
+    -webkit-text-stroke-color: var(--main-text-color);
+}
+
+.menu__item:hover .menu__item-text {
+  z-index: 10;
+}
+.menu__item:hover .menu__item-image_wrapper {
+  z-index: 2;
+}
+.section-services{
+  overflow: hidden;
+  background-color: #F2f2f2;
+  padding: 70px 0px;
+}
+.support {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  display: flex;
+}
+.support a {
+  margin: 0 10px;
+  font-size: 1.8rem;
+  backface-visibility: hidden;
+  transition: all 150ms ease;
+}
+.support a:hover {
+  transform: scale(1.1);
+}
+
+.body--container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 700px;
+  height: 100vh;
+}
+
+.bubble--container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-family: var(--display-font);
+  font-weight: 700;
+  width: 50%;
+  text-align: center;
+  font-size: 40px;
+  z-index: 3;
+  color: var(--main-text-color);
+}
+
+.bubble {
+  z-index: 2;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.bubble--one {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 200px;
+  background-color: var(--main-ripple-color);
+}
+
+.bubble--two {
+  top: 500px;
+  right: 200px;
+  background-color: var(--main-text-color);
+}
+
+.bubble--three {
+  bottom: 200px;
+  left: 200px;
+  background-color: #1a1a1a;
+}
+
+.bubble--large {
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+  background-color: #e9e9ff;
+}
+
+@media (max-width: 1000px) {
+  .text {
+    width: 80%;
+    font-size: 30px;
+  }
+
+  .bubble--one {
+    left: 100px;
+  }
+
+  .bubble--two {
+    right: 100px;
+  }
+  .bubble--three {
+    left: 100px;
+  }
+
+  .bubble--large {
+    width: 300px;
+    height: 300px;
+  }
 }
