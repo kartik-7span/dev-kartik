@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500;600;700&display=swap');
+:root {
+  --dark-red: #B71C1C;
+  --light-red: #EA2027;
+  --white: #ffffff;
+  --black:#000000;
+  --background: #1b1b1b;
+  --gray: #999999;
+  --font:'Fahkwang', sans-serif;
+;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #999999;
+    line-height: 1.5;
+    overflow-x: hidden;
+    background-color: var(--background);
+    font-family: var(--font);
+}
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
+  z-index: -1;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  word-break: break-word;
+}
+a:focus {
+  outline: none;
+}
+a:hover {
+  transition: all 0.4s ease-in-out;
+}
+ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 0;
+}
+
+li {
+  list-style: none;
+}
+.container{
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.align-center{
+  align-items: center;
+}
+.text--center{
+  text-align: center;
+}
+.btn--white{
+  background-color: var(--white);
+  color: var(--black);
+}
+.btn {
+    padding: 15px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    height: 60px;
+    overflow: hidden;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    border: 1px solid var(--white);
+    transition: all .4s ease;
+}
+.btn .btn__bg--animation {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--light-red);
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.btn:hover {
+  color: var(--white);
+}
+.btn:hover .btn__bg--animation {
+  width: 225%;
+  height: 562.5px;
+}
+.btn:active {
+  background-color: var(--light-red);
+}
+.btn__text{
+  position: relative;
+  z-index: 2;
+}
+.btn__text i{
+  font-weight: 600;
+  margin-left: 5px;
+}
+/* ---------- Loader Css Start ---------- */
+
+#loader img{
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+#loader {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 105;
+	background-color: var(--black);
+	cursor: pointer;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loader .image-container {
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+	#loader .image-container {
+		height: 80vh;
+	}
+}
+
+#loader .banner-logo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	max-width: 1600px;
+}
+
+#loader .slide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+}
+
+#loader .slide-2 {
+	height: 0;
+}
+
+.slide-1 {
+	z-index: 999;
+}
+
+.image-container {
+	background-color: #141414;
+}
+
+/* Header css start */
+.header{
+  padding: 23px 0px;
+}
+.round-bg {
+    background: var(--light-red);
+    border-radius: 50%;
+    inset: 0;
+    position: absolute;
+    transform: scale(1);
+    transition: transform .4s cubic-bezier(.445,.05,.55,.95);
+}
+.round-wrapper {
+    align-items: center;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    position: relative;
+    transform: rotate(0deg);
+    width: 48px;
+}
+.cta-menu {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+.text {
+  font-family: var(--font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--white);
+    letter-spacing: .2em;
+    margin-right: 10px;
+    padding: 0.8rem 0.1rem;
+    text-transform: capitalize;
+}
+.cta-menu .text-wrapper .text.hover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+.text-wrapper{
+  overflow: hidden;
+}
+ .cta-menu .text-wrapper .inner {
+    position: relative;
+    transform: translateZ(0);
+    transition: transform .4s cubic-bezier(.445,.05,.55,.95);
+}
+.cta-menu:hover .text-wrapper .inner {
+    transform: translate3d(0,-150%,0);
+}
+.cta-menu .round-wrapper .square {
+    height: 14px;
+    position: relative;
+    transition: transform .4s cubic-bezier(.445,.05,.55,.95);
+    width: 14px;
+}
+.cta-menu .round-wrapper .sm-round {
+    background: #fff;
+    border-radius: 50%;
+    height: 4px;
+    position: absolute;
+    transform: scaleX(1);
+    transition: transform .6s cubic-bezier(.39,.575,.565,1);
+    width: 4px
+}
+.cta-menu .round-wrapper .sm-round:first-child {
+    left: 0;
+    top: 0
+}
+
+.cta-menu .round-wrapper .sm-round:nth-child(2) {
+    right: 0;
+    top: 0
+}
+
+.cta-menu .round-wrapper .sm-round:nth-child(3) {
+    bottom: 0;
+    left: 0
+}
+
+.cta-menu .round-wrapper .sm-round:nth-child(4) {
+    bottom: 0;
+    right: 0
+}
+.cta-menu:hover .round-wrapper .round-bg {
+    transform: scale(1.15);
+}
+
+/*Hero section css start*/
+.wave {
+  animation-name: wave-animation;  
+  animation-duration: 2.5s;        
+  animation-iteration-count: infinite;  
+  transform-origin: 70% 70%;     
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
+}
+.section--hero-block{
+  padding: 14vh 0vh;
+  position: relative;
+  overflow: hidden;
+}
+.section--hero-block h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 74px;
+    line-height: 90px;
+    color: var(--white);
+    margin: 0;
+}
+.section--hero-block h1 span{
+  color: var(--light-red);
+}
+.section__hero--text{
+      padding: 0 15vw;
+}
+.section__triangles--animation span:first-child {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    animation: rotate 2s linear infinite;
+    transform-origin: 50% 50%;
+}
+.section__triangles--animation span:nth-child(2) {
+    position: absolute;
+    top: 25%;
+    right: 35%;
+    animation: rotate 2s linear infinite;
+    transform-origin: 50% 50%;
+}
+.section__triangles--animation span:nth-child(3) {
+    position: absolute;
+    top: 55%;
+    left: 16%;
+    animation: rotate 2s linear infinite;
+    transform-origin: 50% 50%;
+}
+.section__triangles--animation span:nth-child(4) {
+    position: absolute;
+    bottom: -27%;
+    left: 15%;
+ 
+}
+.section__triangles--animation span:nth-child(4) svg{
+   width: 300px;
+    height: 300px;
+    transform: rotate(60deg);
+}
+.section__triangles--animation span:nth-child(5) {
+    position: absolute;
+    top: 5%;
+    right:-10%;
+}
+.section__triangles--animation span svg path{
+  opacity: .7;
+}
+.section__hero--text p{
+  margin-bottom: 30px;
+}
+@keyframes rotate {
+ 0%{
+    transform: rotate(0deg);
+   }
+100%{
+    transform: rotate(360deg);
+   }
+}
