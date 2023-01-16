@@ -351,7 +351,15 @@ li {
   color: var(--light-red);
 }
 .section__hero--text{
-      padding: 0 15vw;
+    padding: 0 15vw;  
+}
+.section__hero--text h1{
+  position: relative;
+}
+.section__hero--text .arc {
+    position: absolute;
+    left: 0;
+    top: 50px;
 }
 .section__triangles--animation span:first-child {
     position: absolute;
@@ -392,6 +400,11 @@ li {
 }
 .section__triangles--animation span svg path{
   opacity: .7;
+}
+.section__logo--animate {
+    position: absolute;
+    right: 0;
+    bottom: -35px;
 }
 .section__hero--text p{
   margin-bottom: 30px;
