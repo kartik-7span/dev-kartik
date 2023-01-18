@@ -54,23 +54,28 @@ function img2svg() {
 img2svg();
 // SVG file to SVG code convert JS End
 
-const introTitle = new SplitText('.intro__title', {type: "lines", linesClass: "intro-line"});
-function initIntro() {
-    
-    // animate the intro elements into place
-    
-    let tl = gsap.timeline({delay: 1.2});
-    
-    tl.from('.intro-line', {
-        // x: 100,
-        y: 400,
-        ease: 'power4',
-        duration: 3
-    })
-    .from('.intro__txt', {
-        x: -100,
-        opacity: 0,
-        ease: 'power4',
-        duration: 3
-    }, 0.7)
-}
+// image reval animation js
+gsap.registerPlugin(ScrollTrigger);
+
+let revealContainers = document.querySelectorAll(".section__projectsimg");
+
+revealContainers.forEach((container) => {
+  let image = container.querySelector("img");
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      toggleActions: "restart none none reset"
+    }
+  });
+
+  tl.set(container, { autoAlpha: 1 });
+  tl.from(container, 1.5, {
+    xPercent: -100,
+    ease: Power2.out
+  });
+  tl.from(image, 1.5, {
+    xPercent: 100,
+    delay: -1.5,
+    ease: Power2.out
+  });
+});
