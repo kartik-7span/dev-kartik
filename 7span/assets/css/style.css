@@ -74,7 +74,9 @@ ul {
   list-style: none;
   margin-top: 0;
 }
-
+main {
+    overflow-x: hidden;
+}
 li {
   list-style: none;
 }
@@ -104,6 +106,36 @@ li {
 .btn--white{
   background-color: var(--white);
   color: var(--black);
+}
+.section__comman--title h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin: 0;
+    position: relative;
+    padding-left: 40px;
+    display: inline-block;
+}
+.section__comman--title h2::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+    border-left: 24px solid var(--light-red);
+    position: absolute;
+    top: 8px;
+    left: 0px; 
+}
+.section__comman--title h2 span{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--white);
+      color: transparent;
 }
 .btn {
     padding: 15px 24px;
@@ -174,6 +206,34 @@ li {
 }
 .mb--30{
   margin-bottom: 30px;
+}
+@media(max-width:1200px){
+  .container{
+    max-width: 1099px;
+  }
+}
+@media(max-width:991px){
+  .container{
+    max-width: 700px;
+  }
+ .col--25{
+  flex: 0 0 50%;
+  max-width: 50%;
+ }
+ .section__comman--title h2 {
+  font-size: 36px;
+  line-height: 46px;
+  margin-bottom: 20px;
+ }
+ .btn {
+  padding: 12px 18px;
+ } 
+}
+@media(max-width:767px){
+   .col--25,.col--50,.col--40,.col--20 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 /* ---------- Loader Css Start ---------- */
 
@@ -464,41 +524,28 @@ li {
 .section__line--anime svg {
     animation: rotate 2s linear infinite;
 }
+@media(max-width:991px){
+  .section__getexp--text{
+    justify-content: center;
+  }
+  .section__logo--animate img{
+    width:70%;
+    margin-left: auto;
+  }
+  .section__hero--text .arc {
+      left: -60px;
+      top: 45px;
+  }
+  .section__hero--text {
+      padding: 0 7vw;
+  }
+}
+
 /* Expertise CSS Start */
 .section--expertise{
   padding: 100px 0px;
 }
 
-.section__comman--title h2 {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 64px;
-    text-align: center;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    margin: 0;
-    position: relative;
-    padding-left: 40px;
-    display: inline-block;
-}
-.section__comman--title h2::before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 24px solid transparent;
-    border-bottom: 24px solid transparent;
-    border-left: 24px solid var(--light-red);
-    position: absolute;
-    top: 8px;
-    left: 0px; 
-}
-.section__comman--title h2 span{
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--white);
-      color: transparent;
-}
 .section--expertise .btn {
     margin: 0;
 }
@@ -747,4 +794,206 @@ li {
   padding: 40px 0px;
   text-align: center;
    border-bottom: 1px solid var(--light-red);
+}
+@media(max-width:991px){
+  .section--expertise,
+  .section--projects {
+      padding: 50px 0px;
+  }
+  .section__projectinfo h3{
+    font-size: 20px;
+  }
+  .section__whatwedo--text h3{
+    font-size: 54px;
+    line-height: 74px;
+  }
+  .section__design {
+      padding: 2.5vw;
+  }
+  .section__design p{
+    font-size: 16px;
+  }
+  .section__projectsno h4, .section__minds h4, .section__clients h4{
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .section__projectsno, .section__minds, .section__clients {
+      padding: 1vw;
+      height: 130px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+  .section__designexp h3 {
+    font-size: 30px;
+    line-height: 48px;
+  }
+}
+@media(max-width:767px){
+  .section--projects .row .col--50:nth-child(even) .section__projectbox{
+    padding-left: 0px;
+    padding-top: 30px;
+  }
+  .section__design,.section__minds,.section__projectsno{
+    border-bottom: 1px solid var(--light-red);
+    border-right: 0;
+  }
+}
+/* Technologies CSS */
+.section--technologies{
+  padding: 100px 0px;
+}
+.section__technologiesinner {
+    padding: 27px 20px;
+    border: 1px solid var(--light-red);
+    cursor: pointer;
+    height: 100%;
+    min-height: 450px;
+    display: flex;
+    align-items: flex-start;
+}
+.section__nonhover p {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    color: var(--white);
+    margin: 0px 20px;
+}
+.section__hover a{
+  display: block;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--white);
+}
+.section__hover a i{
+  font-weight: 600;
+  margin-left: 5px;
+  margin-top: 1px;
+}
+.section__nonhover {
+    text-align: center;
+    transition: .4s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+.section__nonhover h4,.section__hover h4,.section__hover p {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    color: var(--white);
+    position: relative;
+    margin: 0px 0px 40px 0px;
+}
+.section__nonhover h4:before ,.section__hover h4:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 40px;
+    background-color: var(--white);
+    height: 1px;
+    transform: translate(-50%);
+  
+}
+.section--technologies .row{
+  margin: 0 -10px;
+}
+.section__technologies--box{
+  padding: 0 10px;
+  flex: 0.4;
+  width: 11%;
+  min-width: 11%;
+  transition: flex .7s ease-in;
+  -webkit-transition: .5s ease-in;
+  position: relative;
+  overflow: hidden;
+ 
+}
+.section__technologies--box.active{
+  flex: 7;
+}
+.section__hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 30px 40px 40px 40px;
+    transition: .7s ease-in-out;
+    opacity: 0;
+}
+.section__technologies--box.active .section__nonhover{
+  opacity: 0;
+  transition: .1s ease-in-out;
+}
+.section__technologies--box.active .section__hover{
+  opacity: 1;
+  transition: .7s ease-in-out;
+}
+.section__hover span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--gray);
+}
+.section__hover h4{
+  color: var(--gray);
+  margin-bottom: 30px;
+}
+ .section__hover h4:before{
+  left: 20px;
+  background-color: var(--gray);
+}
+.section__hover p{
+  margin-bottom: 10px
+}
+@media(max-width: 991px){
+  .section__technologies--box {
+    flex: 0 0 20%;
+    width: 20%;
+    min-width: 20%;
+    margin-bottom: 20px;
+  }
+  .section__technologies--box.active {
+      flex: 0 0 60%;
+      max-width: 60%;
+  }
+}
+@media(max-width:767px){
+  .section__nonhover p{
+        writing-mode: horizontal-tb;
+  }
+  .section__technologiesinner{
+    min-height: auto;
+  }
+  .section__nonhover h4, .section__hover h4, .section__hover p{
+    margin: 0;
+  }
+  .section__technologies--box.active .section__technologiesinner {
+      height: 410px;
+  }
+  .section__technologies--box.active{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .section__technologies--box {
+      flex: 0 0 100%;
+      width: 100%;
+      min-width: 100%;
+      margin-bottom: 20px;
+  }
+  .section__hover h4{
+    margin-bottom: 20px;
+  }
+  .section__whatwedo--text h3 {
+      font-size: 44px;
+      line-height: 60px;
+  }
 }

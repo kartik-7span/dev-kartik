@@ -79,3 +79,18 @@ revealContainers.forEach((container) => {
     ease: Power2.out
   });
 });
+
+// Technologies hover
+  const panels = document.querySelectorAll(".section__technologies--box");
+      panels.forEach((panel) => {
+          panel.addEventListener("mouseover", () => {
+              removeActiveClasses();
+              panel.classList.add("active");
+          });
+      });
+
+      const removeActiveClasses = () => {
+          panels.forEach((panel) => {
+              panel.classList.remove("active");
+          });
+      };
