@@ -540,7 +540,12 @@ li {
       padding: 0 7vw;
   }
 }
-
+@media(max-width:767px){
+  .section__hero--text .arc {
+      left: -35px;
+      top: 22px;
+  }
+}
 /* Expertise CSS Start */
 .section--expertise{
   padding: 100px 0px;
@@ -840,6 +845,10 @@ li {
     border-bottom: 1px solid var(--light-red);
     border-right: 0;
   }
+  .section--hero-block h1 {
+    font-size: 48px;
+    line-height: 60px;
+  }
 }
 /* Technologies CSS */
 .section--technologies{
@@ -995,5 +1004,28 @@ li {
   .section__whatwedo--text h3 {
       font-size: 44px;
       line-height: 60px;
+  }
+  .section__triangles--animation span:nth-child(5) svg {
+      width: 130px;
+  }
+  .section__triangles--animation span:nth-child(5) {
+      top: -100px;
+  }
+
+  .section__triangles--animation span:first-child {
+      left: 12%;
+  }
+
+  .section__triangles--animation span:nth-child(2) {
+      right: 10%;
+  }
+  .section__triangles--animation span:nth-child(4) svg{
+      width: 130px;
+
+  }
+  .section__triangles--animation span:nth-child(4) {
+      position: absolute;
+      bottom: -27%;
+      left: -5%;
   }
 }
