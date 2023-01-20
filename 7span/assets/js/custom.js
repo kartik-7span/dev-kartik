@@ -82,15 +82,43 @@ revealContainers.forEach((container) => {
 
 // Technologies hover
   const panels = document.querySelectorAll(".section__technologies--box");
-      panels.forEach((panel) => {
-          panel.addEventListener("mouseover", () => {
-              removeActiveClasses();
-              panel.classList.add("active");
-          });
-      });
+    panels.forEach((panel) => {
+        panel.addEventListener("mouseover", () => {
+            removeActiveClasses();
+            panel.classList.add("active");
+        });
+    });
 
-      const removeActiveClasses = () => {
-          panels.forEach((panel) => {
-              panel.classList.remove("active");
-          });
-      };
+    const removeActiveClasses = () => {
+        panels.forEach((panel) => {
+            panel.classList.remove("active");
+        });
+    };
+
+  // Testimonail Slider
+  const swiper = new Swiper(".swiper--testimonial", {
+  // Optional parameters
+  direction: "horizontal",
+  autoplay: {
+    delay: 5000
+  },
+  loop: true,
+
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true
+  },
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+    clickable: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev"
+  }
+});
