@@ -207,6 +207,10 @@ li {
 .mb--30{
   margin-bottom: 30px;
 }
+.col--33 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
 @media(max-width:1200px){
   .container{
     max-width: 1099px;
@@ -231,7 +235,7 @@ li {
  } 
 }
 @media(max-width:767px){
-   .col--25,.col--50,.col--40,.col--20 {
+   .col--25,.col--50,.col--40,.col--20,.col--33 {
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -992,7 +996,7 @@ li {
     margin: 0;
   }
   .section__technologies--box.active .section__technologiesinner {
-      height: 410px;
+      height: 460px;
   }
   .section__technologies--box.active{
     flex: 0 0 100%;
@@ -1041,6 +1045,9 @@ li {
   .section__designexp h3 {
       font-size: 26px;
       line-height: 40px;
+  }
+  .section__nonhover p,.section__nonhover h4{
+    font-size: 18px;
   }
 }
 
@@ -1209,7 +1216,112 @@ li {
     line-height: 26px;
   }
 }
-
+/* Start Project Css Start */
 .section--startproj{
   padding: 60px 0px;
+}
+.section__startproject .btn--white {
+    margin: 0;
+}
+
+/*Footer CSS*/
+.footer{
+  padding: 40px 0px;
+  border-top: 1px solid var(--light-red);
+}
+.footer_address--india h4,.footer_address--india p{
+  margin: 0;
+  margin-right: 15px;
+}
+.footer_address--india img{
+  margin-right: 15px;
+}
+.footer__address .footer_address--india:not(:last-child) {
+    margin-bottom: 20px;
+}
+.footer_address--india p{
+  margin-top: 10px;
+}
+.footer hr {
+    margin: 30px 0px;
+    border-color: var(--gray);
+}
+.footer__email a, .footer__contact a {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    color: var(--white);
+    margin-left: 20px;
+}
+.footer__contact,.footer__email{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer__sayhello h4{
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+   color: var(--white);
+   text-transform: uppercase;
+   margin: 0;
+}
+.footer__copyright p{
+  margin: 0;
+}
+.footer .col--50{
+  padding: 0;
+}
+.footer__social ul li {
+    margin-left: 25px;
+}
+
+.footer__social ul {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer__social ul li a svg {
+    height: 25px;
+    width: 25px;
+   
+}
+.footer__social ul li a svg path{
+ transition: all .4s ease-in-out;
+}
+.footer__social ul li a svg:hover path{
+  fill: var(--light-red);
+}
+
+@media(max-width: 991px){
+  .footer__logo,.footer_address--india{
+    margin-bottom: 30px;
+  }
+  .canada{
+    margin-bottom: 0px;
+  }
+  .footer__sayhello,.footer__email{
+    margin-bottom: 20px;
+  } 
+  .footer__copyright p{
+    font-size: 14px;
+    text-align: center;
+  }
+  .footer__social ul li {
+      margin-right: 20px;
+  }
+  .footer__social {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+  }
+  .footer .col--33 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+  .footer__social{
+    margin-top: 0px;
+  }
 }
